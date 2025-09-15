@@ -1,0 +1,69 @@
+
+:root{
+  --bg:#0b1016;--panel:#111827;--panel2:#0f172a;--text:#e5e7eb;--muted:#9ca3af;--accent:#60a5fa;
+  --tick:#475569;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:radial-gradient(1200px 600px at 40% -20%,#0e1623 0%,var(--bg) 50%);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",Helvetica,Arial; color:var(--text);
+}
+.topbar{
+  position:sticky;top:0;z-index:5;
+  display:flex;align-items:center;justify-content:space-between;gap:.75rem;
+  padding:.6rem .9rem;border-bottom:1px solid rgba(255,255,255,.06);
+  background:linear-gradient(180deg,rgba(17,24,39,.9),rgba(17,24,39,.7)); backdrop-filter:blur(8px);
+}
+.brand{display:flex;align-items:center;gap:.6rem;font-weight:700}
+.navbtns{display:flex;gap:.4rem;flex-wrap:wrap}
+.navbtns a{padding:.45rem .7rem;border-radius:.55rem;text-decoration:none;color:var(--text);
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-weight:600}
+.navbtns a:hover{background:rgba(255,255,255,.12)}
+.navbtns a.active{background:rgba(96,165,250,.15);border-color:rgba(96,165,250,.35);color:#dbeafe}
+
+.status{display:inline-flex;align-items:center;gap:.5rem;padding:.3rem .55rem;border-radius:.5rem;font-size:.85rem;font-weight:600;
+  background:rgba(239,68,68,.15);color:#fecaca;border:1px solid rgba(239,68,68,.35)}
+.status svg{width:1em;height:1em}
+
+.container{padding:14px}
+
+/* Collapsible customizer bar */
+.customizer{display:none;margin:.6rem .9rem 0 .9rem;padding:.6rem;border-radius:.75rem;
+  background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid rgba(255,255,255,.06)}
+.customizer.open{display:block}
+.customizer .rows{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap}
+.customizer .scroller{display:flex;gap:.6rem;overflow:auto;padding:.35rem;border-radius:.5rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+.customizer label{white-space:nowrap;display:flex;align-items:center;gap:.35rem}
+.customizer .actions{display:flex;gap:.5rem;margin-left:auto}
+.button{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--text);padding:.4rem .65rem;border-radius:.5rem;font-weight:700;cursor:pointer}
+.button:hover{background:rgba(255,255,255,.12)}
+
+/* Gauges grid */
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(4, minmax(240px, 1fr))}
+@media (max-width:1200px){ .grid{grid-template-columns:repeat(3, minmax(240px,1fr));} }
+@media (max-width:900px){ .grid{grid-template-columns:repeat(2, minmax(240px,1fr));} }
+@media (max-width:600px){ .grid{grid-template-columns:repeat(1, minmax(240px,1fr));} }
+.card{position:relative;background:linear-gradient(180deg,var(--panel),var(--panel2));
+  border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1rem;min-height:220px;transition:transform .15s ease, box-shadow .15s ease}
+.card.dragging{opacity:.9;transform:scale(.98);box-shadow:0 14px 40px rgba(0,0,0,.35)}
+.card.drag-over{outline:2px dashed rgba(255,255,255,.25);outline-offset:-8px}
+.title{text-align:center;font-size:.95rem;color:var(--muted);margin-bottom:.25rem;user-select:none}
+.gwrap canvas{width:100%;height:auto;display:block;min-height:160px}
+.readout{margin-top:.35rem;text-align:center;font-weight:900;font-size:clamp(1.2rem,2.4vw,1.9rem);color:var(--text)}
+.readout span{font-weight:600;font-size:.85rem;color:var(--muted);margin-left:.25rem}
+.card.text .gwrap{display:none}
+.card.text .readout{font-size:clamp(2.2rem,4.5vw,3.6rem)}
+
+/* Sections for DTC/Health/Trip */
+.section{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1rem;margin:.8rem .9rem}
+.section h2{margin:.25rem 0 .75rem;font-size:1rem;color:#d1d5db}
+.row{display:grid;grid-template-columns:160px 1fr 140px;gap:.75rem;padding:.6rem .75rem;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:.6rem}
+.kv{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:.6rem}
+.kv .item{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:.6rem;padding:.6rem}
+.kv .label{font-size:.85rem;color:var(--muted);margin-bottom:.2rem}
+.kv .val{font-weight:800;font-size:1.1rem}
+.badge{display:inline-block;padding:.15rem .45rem;border-radius:.4rem;font-size:.75rem;font-weight:700}
+.badge.ok{background:rgba(34,197,94,.15);color:#bbf7d0;border:1px solid rgba(34,197,94,.35)}
+.badge.warn{background:rgba(245,158,11,.15);color:#fde68a;border:1px solid rgba(245,158,11,.35)}
+.badge.err{background:rgba(239,68,68,.15);color:#fecaca;border:1px solid rgba(239,68,68,.35)}

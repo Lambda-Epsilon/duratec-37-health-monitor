@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OBD Dashboard — Gauges</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head><body>
+
+  <header class="topbar">
+    <div class="brand">OBD Dashboard</div>
+    <div class="navbtns">
+      <a href="index.html" class="active">Gauges</a>
+      <a href="dtcs.html" class="">DTCs</a>
+      <a href="health.html" class="">Health Report</a>
+      <a href="trip.html" class="">Trip</a>
+      <span class="status" id="statusBadge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 7h2v6h-2zm0 8h2v2h-2z"/><path fill="currentColor" d="M1 21h22L12 2 1 21zM12 6l7.53 13H4.47L12 6z"/></svg>
+        OBD not responding
+      </span>
+    </div>
+  </header>
+
+
+<div class="customizer" id="customizer">
+  <div class="rows">
+    <div class="scroller" id="menuPanel">
+      <label><input type="checkbox" data-g="gear"> Current Gear</label>
+      <label><input type="checkbox" data-g="rpm"> RPM</label>
+      <label><input type="checkbox" data-g="oil"> Oil Temp (°C)</label>
+      <label><input type="checkbox" data-g="clt"> Coolant Temp (°C)</label>
+      <label><input type="checkbox" data-g="trans"> Transmission Temp (°C)</label>
+      <label><input type="checkbox" data-g="oilp"> Oil Pressure (psi)</label>
+      <label><input type="checkbox" data-g="volt"> Voltage (V)</label>
+      <label><input type="checkbox" data-g="maf"> MAF (g/s)</label>
+      <label><input type="checkbox" data-g="stft"> STFT (%)</label>
+      <label><input type="checkbox" data-g="ltft"> LTFT (%)</label>
+      <label><input type="checkbox" data-g="spark"> Ignition Timing (°)</label>
+      <label><input type="checkbox" data-g="kr"> Knock Retard (°)</label>
+      <label><input type="checkbox" data-g="tcc"> TCC Slip (RPM)</label>
+      <label><input type="checkbox" data-g="linep"> Line/Clutch Pressure (psi)</label>
+    </div>
+    <div class="actions">
+      <button class="button" id="applySel">Apply</button>
+      <button class="button" id="resetLayout">Reset</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="navbtns" style="margin-bottom:.5rem">
+    <a href="#" id="toggleCustomize" class="button">Customize ▾</a>
+  </div>
+  <div id="grid" class="grid"></div>
+</div>
+
+<script src="assets/app.js"></script>
+</body></html>

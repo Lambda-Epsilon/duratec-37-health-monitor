@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OBD Dashboard — Trip</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head><body>
+
+  <header class="topbar">
+    <div class="brand">OBD Dashboard</div>
+    <div class="navbtns">
+      <a href="index.html" class="">Gauges</a>
+      <a href="dtcs.html" class="">DTCs</a>
+      <a href="health.html" class="">Health Report</a>
+      <a href="trip.html" class="active">Trip</a>
+      <span class="status" id="statusBadge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 7h2v6h-2zm0 8h2v2h-2z"/><path fill="currentColor" d="M1 21h22L12 2 1 21zM12 6l7.53 13H4.47L12 6z"/></svg>
+        OBD not responding
+      </span>
+    </div>
+  </header>
+
+
+<section class="section">
+  <h2>Trip Stats</h2>
+  <div class="kv">
+    <div class="item"><div class="label">Duration</div><div class="val" id="tr_time">—</div></div>
+    <div class="item"><div class="label">Distance</div><div class="val" id="tr_dist">—</div></div>
+    <div class="item"><div class="label">Avg Speed</div><div class="val" id="tr_avgspd">—</div></div>
+    <div class="item"><div class="label">Max Speed</div><div class="val" id="tr_maxspd">—</div></div>
+  </div>
+  <div class="kv" style="margin-top:.6rem">
+    <div class="item"><div class="label">Fuel Used</div><div class="val" id="tr_fuel">—</div></div>
+    <div class="item"><div class="label">MPG</div><div class="val" id="tr_mpg">—</div></div>
+    <div class="item"><div class="label">Max RPM</div><div class="val" id="tr_maxrpm">—</div></div>
+    <div class="item"><div class="label">Idle Time</div><div class="val" id="tr_idle">—</div></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Trip Controls</h2>
+  <div class="navbtns">
+    <button class="button" id="btnResetTrip">Reset Trip</button>
+  </div>
+</section>
+
+<script src="assets/trip.js"></script>
+</body></html>

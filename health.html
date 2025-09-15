@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OBD Dashboard — Health Report</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head><body>
+
+  <header class="topbar">
+    <div class="brand">OBD Dashboard</div>
+    <div class="navbtns">
+      <a href="index.html" class="">Gauges</a>
+      <a href="dtcs.html" class="">DTCs</a>
+      <a href="health.html" class="active">Health Report</a>
+      <a href="trip.html" class="">Trip</a>
+      <span class="status" id="statusBadge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 7h2v6h-2zm0 8h2v2h-2z"/><path fill="currentColor" d="M1 21h22L12 2 1 21zM12 6l7.53 13H4.47L12 6z"/></svg>
+        OBD not responding
+      </span>
+    </div>
+  </header>
+
+
+<section class="section">
+  <h2>Vehicle</h2>
+  <div class="kv">
+    <div class="item"><div class="label">VIN</div><div class="val" id="vin">—</div></div>
+    <div class="item"><div class="label">ECU</div><div class="val" id="ecu">—</div></div>
+    <div class="item"><div class="label">Calibration ID</div><div class="val" id="calid">—</div></div>
+    <div class="item"><div class="label">Firmware</div><div class="val" id="fw">—</div></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Readiness / Monitors</h2>
+  <div class="kv" id="monitors"></div>
+</section>
+
+<section class="section">
+  <h2>Vitals</h2>
+  <div class="kv">
+    <div class="item"><div class="label">Battery</div><div class="val" id="hv_batt">—</div></div>
+    <div class="item"><div class="label">Coolant</div><div class="val" id="hv_clt">—</div></div>
+    <div class="item"><div class="label">Oil</div><div class="val" id="hv_oil">—</div></div>
+    <div class="item"><div class="label">Trans</div><div class="val" id="hv_trans">—</div></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>DTC Summary</h2>
+  <div class="kv">
+    <div class="item"><div class="label">Stored</div><div class="val" id="hv_dtc_s">—</div></div>
+    <div class="item"><div class="label">Pending</div><div class="val" id="hv_dtc_p">—</div></div>
+    <div class="item"><div class="label">Permanent</div><div class="val" id="hv_dtc_perm">—</div></div>
+    <div class="item"><div class="label">Last Scan</div><div class="val" id="hv_last">—</div></div>
+  </div>
+</section>
+
+<script src="assets/health.js"></script>
+</body></html>

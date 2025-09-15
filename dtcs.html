@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OBD Dashboard — DTCs</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head><body>
+
+  <header class="topbar">
+    <div class="brand">OBD Dashboard</div>
+    <div class="navbtns">
+      <a href="index.html" class="">Gauges</a>
+      <a href="dtcs.html" class="active">DTCs</a>
+      <a href="health.html" class="">Health Report</a>
+      <a href="trip.html" class="">Trip</a>
+      <span class="status" id="statusBadge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 7h2v6h-2zm0 8h2v2h-2z"/><path fill="currentColor" d="M1 21h22L12 2 1 21zM12 6l7.53 13H4.47L12 6z"/></svg>
+        OBD not responding
+      </span>
+    </div>
+  </header>
+
+
+<section class="section"><h2>Stored Codes</h2><div id="dtc_stored"></div></section>
+<section class="section"><h2>Pending Codes</h2><div id="dtc_pending"></div></section>
+<section class="section"><h2>Permanent Codes</h2><div id="dtc_perm"></div></section>
+<div class="section"><div class="navbtns"><button class="button" id="btnClear" title="Disabled offline">Clear DTCs</button></div></div>
+<p style="opacity:.6;margin:.5rem .9rem">Use <code>window.dtcUpdate()</code> from your backend to populate data.</p>
+
+<script src="assets/dtcs.js"></script>
+</body></html>
